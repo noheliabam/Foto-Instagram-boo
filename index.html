@@ -13,10 +13,29 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-light bg-light border-bottom">
-    <div class="container d-flex justify-content-between">
-      <span class="navbar-brand mb-0 h1">Instagram</span>
-      <div class="dropdown">
+ <!-- Navbar con perfil -->
+<!-- Navbar -->
+<nav class="navbar navbar-light bg-light border-bottom">
+  <div class="container d-flex justify-content-between align-items-center">
+    <span class="navbar-brand mb-0 h1">Instagram</span>
+
+    <div class="d-flex align-items-center gap-3">
+      <!-- Tabs tipo botón -->
+      <ul class="nav nav-pills me-3" id="tabSelector" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="gallery-tab" data-bs-toggle="tab" data-bs-target="#gallery" type="button" role="tab" aria-controls="gallery" aria-selected="true">
+            <i class="fas fa-th"></i>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="posts-tab" data-bs-toggle="tab" data-bs-target="#posts" type="button" role="tab" aria-controls="posts" aria-selected="false">
+            <i class="fas fa-bars"></i>
+          </button>
+        </li>
+      </ul>
+
+      <!-- Crear -->
+      <div class="dropdown me-3">
         <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
           Crear
         </button>
@@ -24,55 +43,63 @@
           <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#newPostModal">Nuevo post</a></li>
         </ul>
       </div>
-    </div>
-  </nav>
 
-  <!-- Tabs -->
-  <div class="container mt-4">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="grid-tab" data-bs-toggle="tab" data-bs-target="#grid" type="button" role="tab">Galería</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="post-tab" data-bs-toggle="tab" data-bs-target="#posts" type="button" role="tab">Posts</button>
-      </li>
-    </ul>
-
-    <div class="tab-content mt-3" id="myTabContent">
-      <!-- Galería -->
-      <div class="tab-pane fade show active" id="grid" role="tabpanel">
-        <div class="row">
-          <div class="col-4 mb-4"><img src="https://picsum.photos/id/1015/600/600" class="img-fluid" alt="foto" data-bs-toggle="modal" data-bs-target="#photoModal"></div>
-          <div class="col-4 mb-4"><img src="https://picsum.photos/seed/picsum/600/600" class="img-fluid" alt="foto"></div>
-          <div class="col-4 mb-4"><img src="https://picsum.photos/600/600?grayscale" class="img-fluid" alt="foto"></div>
-        </div>
+      <!-- Perfil -->
+      <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          <i class="fas fa-user"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Accesibilidad</a></li>
+          <li><a class="dropdown-item" href="#">Perfil</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+        </ul>
       </div>
+    </div>
+  </div>
+</nav>
 
-      <!-- Posts -->
-      <div class="tab-pane fade" id="posts" role="tabpanel">
-        <div class="row">
-          <div class="col-12 mb-4">
-            <div class="card">
-              <img src="https://picsum.photos/id/63/600/400" class="card-img-top" alt="post">
-              <div class="card-body">
-                <h5 class="card-title">nohelia.dev</h5>
-                <p class="card-text">Coffee Moulin Rouge 🇨🇭✨</p>
-              </div>
+<!-- Contenido de las pestañas -->
+<div class="container mt-4">
+  <div class="tab-content" id="myTabContent">
+    <!-- Galería -->
+    <div class="tab-pane fade show active" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
+      <div class="row">
+        <div class="col-4 mb-4"><img src="https://picsum.photos/id/1015/600/600" class="img-fluid" alt="foto" data-bs-toggle="modal" data-bs-target="#photoModal"></div>
+        <div class="col-4 mb-4"><img src="https://picsum.photos/id/1016/600/600" class="img-fluid" alt="foto"></div>
+        <div class="col-4 mb-4"><img src="https://picsum.photos/id/1018/600/600" class="img-fluid" alt="foto"></div>
+         <div class="col-4 mb-4"><img src="https://picsum.photos/id/1015/600/600" class="img-fluid" alt="foto"></div>
+        <div class="col-4 mb-4"><img src="https://picsum.photos/id/1016/600/600" class="img-fluid" alt="foto"></div>
+        <div class="col-4 mb-4"><img src="https://picsum.photos/id/1018/600/600" class="img-fluid" alt="foto"></div>
+      </div>
+    </div>
+
+    <!-- Posts -->
+    <div class="tab-pane fade" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+      <div class="row">
+        <div class="col-12 mb-4">
+          <div class="card">
+            <img src="https://picsum.photos/id/63/600/400" class="card-img-top" alt="post">
+            <div class="card-body">
+              <h5 class="card-title">nohelia.dev</h5>
+              <p class="card-text">Coffee Moulin Rouge 🇨🇭✨</p>
             </div>
           </div>
-          <div class="col-12 mb-4">
-            <div class="card">
-              <img src="https://picsum.photos/id/120/600/400" class="card-img-top" alt="post">
-              <div class="card-body">
-                <h5 class="card-title">nohelia.chavez</h5>
-                <p class="card-text">Otra tarde de código con amor 💻💖</p>
-              </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <img src="https://picsum.photos/id/120/600/400" class="card-img-top" alt="post">
+            <div class="card-body">
+              <h5 class="card-title">nohelia.chavez</h5>
+              <p class="card-text">Otra tarde de código con amor 💻💖</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
   <!-- Modal de imagen -->
   <div class="modal fade" id="photoModal" tabindex="-1" aria-hidden="true">
